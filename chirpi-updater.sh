@@ -1,8 +1,9 @@
 #!/bin/bash
 # you'll need chirpc from https://github.com/tylert/chirp.hg
 
-# remove the previous Chirp image files since we'll be grabbing new ones
-rm -rf /home/pi/chirpi-public/*.img
+# Uncomment and enter your email address if you want
+# the script to email when the radio uploads are done (see below)
+#MYEMAIL="you@email.com"
 
 # Chirp images and thier corresponding public URLs
 # These sample images are just some Seattle area repeaters (pulled from Repeaterbook via
@@ -13,7 +14,8 @@ BaofengUV82URL="https://www.dropbox.com/s/mnypmrpw6qco93e/Baofeng_UV-82_Seattle_
 BaofengUV5RTPURL="https://www.dropbox.com/s/26q18ksbgaqcvlr/Baofeng_UV-5RTP_Seattle_VHF_GMRS_FRS_Simplex.img"
 QYTKT8900URL="https://www.dropbox.com/s/cndu4og0txf8ihz/QYT_KT8900_Seattle_VHF_GMRS_FRS_Simplex.img"
 
-echo $BaofengUV5R5URL
+# remove the previous Chirp image files since we'll be grabbing new ones
+rm -rf /home/pi/chirpi-public/*.img
 
 # Download all your image files
 wget -P /home/pi/chirpi-public/ $BaofengUV5R5URL
@@ -34,9 +36,9 @@ sleep 1 # probably not needed but added anyway
 /home/pi/chirp.hg/chirp.hg/chirpc -r Baofeng_UV-5R --serial=/dev/ttyUSB0 --mmap=/home/pi/chirpi-public/Baofeng_UV-5R5_Seattle_VHF_GMRS_FRS_Simplex.img --upload-mmap
 
 # Assuming your ISP won't block outgoing email, you get an email to let you know it's done.
-# You'll need to setup Postfix or Sendmail and install mailutils, then uncomment the following
-# and put in your email address.
-#echo done | mail -s "Upload Done" your@email.com
+# You'll need to setup Postfix or Sendmail and install mailutils, then uncomment the following.
+# Be sure you put your email address in the variable near the top of this script.
+#echo done | mail -s "Upload Done" $MYEMAIL
 
 # I have the script sleep for 60 seconds before rebooting so I have time to SSH in if needed.
 # 60 seconds should be enough time to log in and comment out the poweroff line so on the next boot

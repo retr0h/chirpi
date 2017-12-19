@@ -32,7 +32,7 @@ sleep 1 # probably not needed but added anyway
 # specific physical buttons for specific radios or even add an LCD/OLED screen and select the radio type.
 /home/pi/chirp.hg/chirp.hg/chirpc -r Baofeng_UV-82 --serial=/dev/ttyUSB0 --mmap=/home/pi/chirpi-public/Baofeng_UV-82_Seattle_VHF_GMRS_FRS_Simplex.img --upload-mmap
 /home/pi/chirp.hg/chirp.hg/chirpc -r QYT_KT8900 --serial=/dev/ttyUSB0 --mmap=/home/pi/chirpi-public/QYT_KT8900_Seattle_VHF_GMRS_FRS_Simplex.img --upload-mmap
-/home/pi/chirp.hg/chirp.hg/chirpc -r Baofeng_UV-82HP --serial=/dev/ttyUSB0 --mmap=/home/pi/chirpi-public/Baofeng_UV-5RTP_Seattle_VHF_GMRS_FRS_Simplex.img --upload-mmap
+/home/pi/chirp.hg/chirp.hg/chirpc -r Baofeng_BF-F8HP --serial=/dev/ttyUSB0 --mmap=/home/pi/chirpi-public/Baofeng_UV-5RTP_Seattle_VHF_GMRS_FRS_Simplex.img --upload-mmap
 /home/pi/chirp.hg/chirp.hg/chirpc -r Baofeng_UV-5R --serial=/dev/ttyUSB0 --mmap=/home/pi/chirpi-public/Baofeng_UV-5R5_Seattle_VHF_GMRS_FRS_Simplex.img --upload-mmap
 
 # Assuming your ISP won't block outgoing email, you get an email to let you know it's done.
